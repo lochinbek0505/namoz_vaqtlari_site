@@ -21,6 +21,7 @@ class _HomepageState extends State<Homepage> {
 
   late Times currentTime;
 
+
   final List<String> viloyatlar = [
     'Toshkent',
     'Andijon',
@@ -517,7 +518,7 @@ class _HomepageState extends State<Homepage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       PrayerTimeCard(
-                        prayerName: "Bomdod",
+                        prayerName: "Bomdod ('saharlik')",
                         time: currentTime.quyosh.toString(),
                         icon: Icons.wb_sunny,
                       ),
@@ -540,7 +541,7 @@ class _HomepageState extends State<Homepage> {
                         icon: Icons.nightlight_round,
                       ),
                       PrayerTimeCard(
-                        prayerName: "Shom",
+                        prayerName: "Shom ('iftorlik')",
                         time: currentTime.xufton.toString(),
                         icon: Icons.nightlight_round,
                       ),
@@ -572,7 +573,7 @@ class _HomepageState extends State<Homepage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   PrayerTimeCard(
-                    prayerName: "Bomdod",
+                    prayerName: "Bomdod ('saharlik')",
                     time: currentTime.quyosh.toString(),
                     icon: Icons.wb_sunny,
                   ),
@@ -595,7 +596,7 @@ class _HomepageState extends State<Homepage> {
                     icon: Icons.nightlight_round,
                   ),
                   PrayerTimeCard(
-                    prayerName: "Shom",
+                    prayerName: "Shom ('iftorlik')",
                     time: currentTime.xufton.toString(),
                     icon: Icons.nightlight_round,
                   ),

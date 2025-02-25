@@ -42,7 +42,7 @@ class PrayerTimeCard extends StatelessWidget {
               child: Text(
                 prayerName.toUpperCase(),
                 style: GoogleFonts.lato(
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
