@@ -162,7 +162,7 @@ class _HomepageState extends State<Homepage> {
   List<ProvinceModel> province_list = [
 
     ProvinceModel("Toshkent viloyati", [
-      DistrictModel("Toshkent shahri", "assets/json/toshkent.json"),
+      DistrictModel("Toshkent", "assets/json/toshkent.json"),
       DistrictModel("Bekobod", "assets/json/bekobod.json"),
       DistrictModel("Olmaliq", "assets/json/olmaliq.json"),
       DistrictModel("Nurafshon", "assets/json/nurafshon.json"),
@@ -270,54 +270,56 @@ class _HomepageState extends State<Homepage> {
       DistrictModel("Marhamat", "assets/json/marhamat.json"),
     ]),
   ];
+  var path = "";
 
   @override
   void initState() {
     super.initState();
-    var path = "";
-    switch (tanlanganViloyat) {
-      case 'Toshkent':
-        path = "assets/json/toshkent.json";
-        break;
-      case 'Andijon':
-        path = "assets/json/andijon.json";
-        break;
-      case 'Buxoro':
-        path = "assets/json/buxoro.json";
-        break;
-      case 'Jizzax':
-        path = "assets/json/jizzax.json";
-        break;
-      case 'Qashqadaryo':
-        path = "assets/json/qarshi.json";
-        break;
-      case 'Navoiy':
-        path = "assets/json/navoiy.json";
-        break;
-      case 'Namangan':
-        path = "assets/json/namangan.json";
-        break;
-      case 'Qoraqalpog\'iston Respublikasi':
-        path = "assets/json/nukus.json";
-        break;
-      case 'Samarqand':
-        path = "assets/json/samarqand.json";
-        break;
-      case 'Surxondaryo':
-        path = "assets/json/surxandaryo.json";
-        break;
-      case 'Sirdaryo':
-        path = "assets/json/qashqadaryo.json";
-        break;
-      case 'Farg\'ona':
-        path = "assets/json/fargona.json";
-        break;
-      case 'Xorazm':
-        path = "assets/json/xorazm.json";
-        break;
-      default:
-        print('Noma\'lum viloyat.');
-    }
+    path = province_list[0].list[0].path;
+    // switch (tanlanganViloyat) {
+    //   case 'Toshkent':
+    //     path = "assets/json/toshkent.json";
+    //     break;
+    //   case 'Andijon':
+    //     path = "assets/json/andijon.json";
+    //     break;
+    //   case 'Buxoro':
+    //     path = "assets/json/buxoro.json";
+    //     break;
+    //   case 'Jizzax':
+    //     path = "assets/json/jizzax.json";
+    //     break;
+    //   case 'Qashqadaryo':
+    //     path = "assets/json/qarshi.json";
+    //     break;
+    //   case 'Navoiy':
+    //     path = "assets/json/navoiy.json";
+    //     break;
+    //   case 'Namangan':
+    //     path = "assets/json/namangan.json";
+    //     break;
+    //   case 'Qoraqalpog\'iston Respublikasi':
+    //     path = "assets/json/nukus.json";
+    //     break;
+    //   case 'Samarqand':
+    //     path = "assets/json/samarqand.json";
+    //     break;
+    //   case 'Surxondaryo':
+    //     path = "assets/json/surxandaryo.json";
+    //     break;
+    //   case 'Sirdaryo':
+    //     path = "assets/json/qashqadaryo.json";
+    //     break;
+    //   case 'Farg\'ona':
+    //     path = "assets/json/fargona.json";
+    //     break;
+    //   case 'Xorazm':
+    //     path = "assets/json/xorazm.json";
+    //     break;
+    //   default:
+    //     print('Noma\'lum viloyat.');
+    // }
+    print(path);
     getDataFromJson(path).then((_) {
       setState(() {
         currentTime = getCurrentTimes(DateTime.now().day)!;
@@ -329,50 +331,49 @@ class _HomepageState extends State<Homepage> {
 
   void change() {
     check = false;
-    var path = "";
-    switch (tanlanganViloyat) {
-      case 'Toshkent':
-        path = "assets/json/toshkent.json";
-        break;
-      case 'Andijon':
-        path = "assets/json/andijon.json";
-        break;
-      case 'Buxoro':
-        path = "assets/json/buxoro.json";
-        break;
-      case 'Jizzax':
-        path = "assets/json/jizzax.json";
-        break;
-      case 'Qashqadaryo':
-        path = "assets/json/qashqadaryo.json";
-        break;
-      case 'Navoiy':
-        path = "assets/json/navoiy.json";
-        break;
-      case 'Namangan':
-        path = "assets/json/namangan.json";
-        break;
-      case 'Qoraqalpog\'iston Respublikasi':
-        path = "assets/json/nukus.json";
-        break;
-      case 'Samarqand':
-        path = "assets/json/samarqand.json";
-        break;
-      case 'Surxondaryo':
-        path = "assets/json/surxandaryo.json";
-        break;
-      case 'Sirdaryo':
-        path = "assets/json/sirdaryo.json";
-        break;
-      case 'Farg\'ona':
-        path = "assets/json/fargona.json";
-        break;
-      case 'Xorazm':
-        path = "assets/json/xorazm.json";
-        break;
-      default:
-        print('Noma\'lum viloyat.');
-    }
+    // switch (tanlanganViloyat) {
+    //   case 'Toshkent':
+    //     path = "assets/json/toshkent.json";
+    //     break;
+    //   case 'Andijon':
+    //     path = "assets/json/andijon.json";
+    //     break;
+    //   case 'Buxoro':
+    //     path = "assets/json/buxoro.json";
+    //     break;
+    //   case 'Jizzax':
+    //     path = "assets/json/jizzax.json";
+    //     break;
+    //   case 'Qashqadaryo':
+    //     path = "assets/json/qashqadaryo.json";
+    //     break;
+    //   case 'Navoiy':
+    //     path = "assets/json/navoiy.json";
+    //     break;
+    //   case 'Namangan':
+    //     path = "assets/json/namangan.json";
+    //     break;
+    //   case 'Qoraqalpog\'iston Respublikasi':
+    //     path = "assets/json/nukus.json";
+    //     break;
+    //   case 'Samarqand':
+    //     path = "assets/json/samarqand.json";
+    //     break;
+    //   case 'Surxondaryo':
+    //     path = "assets/json/surxandaryo.json";
+    //     break;
+    //   case 'Sirdaryo':
+    //     path = "assets/json/sirdaryo.json";
+    //     break;
+    //   case 'Farg\'ona':
+    //     path = "assets/json/fargona.json";
+    //     break;
+    //   case 'Xorazm':
+    //     path = "assets/json/xorazm.json";
+    //     break;
+    //   default:
+    //     print('Noma\'lum viloyat.');
+    // }
     getDataFromJson(path).then((_) {
       setState(() {
         currentTime = getCurrentTimes(DateTime.now().day)!;
@@ -451,6 +452,108 @@ class _HomepageState extends State<Homepage> {
     );
   }
 
+
+
+  void showProvinceDistrictDialog(BuildContext context,
+      List<ProvinceModel> provinces) {
+    ProvinceModel? selectedProvince;
+    DistrictModel? selectedDistrict;
+    List<bool> expandedList = List.generate(
+        provinces.length, (index) => false); // Track expanded items
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              title: Text("Hududni tanlash"),
+              content: SizedBox(
+                height: 400,
+                width: double.maxFinite,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: provinces.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            children: [
+                              Card(
+                                color: selectedProvince == provinces[index]
+                                    ? Colors.blue[100]
+                                    : Colors.white,
+                                child: ListTile(
+                                  title: Text(provinces[index].province,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  onTap: () {
+                                    setState(() {
+                                      selectedProvince = provinces[index];
+                                      selectedDistrict = null;
+                                      expandedList[index] =
+                                      !expandedList[index];
+                                    });
+                                  },
+                                  trailing: IconButton(
+                                    icon: Icon(expandedList[index]
+                                        ? Icons.remove
+                                        : Icons.add),
+                                    onPressed: () {
+                                      setState(() {
+                                        expandedList[index] =
+                                        !expandedList[index];
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ),
+                              if (expandedList[index])
+                                ListView.builder(
+                                  shrinkWrap: true,
+                                  physics: NeverScrollableScrollPhysics(),
+                                  itemCount: selectedProvince!.list.length,
+                                  itemBuilder: (context, districtIndex) {
+                                    return ListTile(
+                                      tileColor: selectedDistrict ==
+                                          selectedProvince!.list[districtIndex]
+                                          ? Colors.green[200]
+                                          : Colors.grey[200],
+                                      title: Text(
+                                          selectedProvince!.list[districtIndex]
+                                              .name),
+                                      onTap: () {
+                                        setState(() {
+                                          print(selectedProvince!
+                                              .list[districtIndex].path);
+                                          path = selectedProvince!
+                                              .list[districtIndex].path;
+                                          change();
+                                          tanlanganViloyat =
+                                              selectedProvince!
+                                                  .list[districtIndex].name;
+                                        });
+                                        Navigator.pop(context);
+                                      },
+                                    );
+                                  },
+                                ),
+                            ],
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -478,13 +581,13 @@ class _HomepageState extends State<Homepage> {
                               width: 50,
                               height: 50,
                             ),
-                            SizedBox(width: 10),
+                            SizedBox(width: 5),
                            size.width<920?Text(
                              "RAMAZON \nVAQTLARI",
                              textAlign: TextAlign.justify,
                              style: TextStyle(
                                color: Colors.black,
-                               fontSize: 20,
+                               fontSize: 19,
                                fontFamily: "Anton",
                              ),
                            ) :Text(
@@ -505,83 +608,62 @@ class _HomepageState extends State<Homepage> {
                           vertical: 20.0,
                           horizontal: 15,
                         ),
-                        child: size.width<500?Column(
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            DropdownButton<String>(
-                              value: tanlanganViloyat,
+                            GestureDetector(
+                              onTap: () {
+                                showProvinceDistrictDialog(
+                                    context, province_list);
 
-                              underline: SizedBox(),
-                              icon: SizedBox(),
-                              onChanged: (String? yangiQiymat) {
-                                setState(() {
-                                  tanlanganViloyat = yangiQiymat;
-                                  change();
-                                });
                               },
-                              items:
-                              viloyatlar.map<DropdownMenuItem<String>>((
-                                  String viloyat,
-                                  ) {
-                                return DropdownMenuItem<String>(
-                                  value: viloyat,
-                                  child: Text(
-                                    viloyat,
-
-                                    style: TextStyle(
-                                      fontSize: size.width*0.037,
-                                      fontWeight: FontWeight.w800,
-                                      color: Colors.black,
-                                    ),
+                              child: RichText(
+                                text: TextSpan(children: [
+                                  TextSpan(
+                                      text: "Hududni tanlang - ",
+                                      style: TextStyle(
+                                          fontSize: 13, color: Colors.black)
                                   ),
-                                );
-                              }).toList(),
-                            ),
-
-                            Text(
-                              "${getMonth(DateTime.now().month).toUpperCase()} ${DateTime.now().day},${DateTime.now().year}",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontFamily: "Anton",
+                                  TextSpan(
+                                    text: tanlanganViloyat,
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.blue),
+                                  )
+                                ]),
                               ),
-                            ),
-                          ],
-                        ):Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            DropdownButton<String>(
-                              value: tanlanganViloyat,
-
-                              underline: SizedBox(),
-                              icon: SizedBox(),
-                              onChanged: (String? yangiQiymat) {
-                                setState(() {
-                                  tanlanganViloyat = yangiQiymat;
-                                  change();
-                                });
-                              },
-                              items:
-                                  viloyatlar.map<DropdownMenuItem<String>>((
-                                    String viloyat,
-                                  ) {
-                                    return DropdownMenuItem<String>(
-                                      value: viloyat,
-                                      child: Text(
-                                        viloyat,
-
-                                        style: TextStyle(
-                                          fontSize: 19,
-                                          fontWeight: FontWeight.w800,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    );
-                                  }).toList(),
-                            ),
-
+                            )
+                            // DropdownButton<String>(
+                            //   value: tanlanganViloyat,
+                            //
+                            //   underline: SizedBox(),
+                            //   icon: SizedBox(),
+                            //   onChanged: (String? yangiQiymat) {
+                            //     setState(() {
+                            //       tanlanganViloyat = yangiQiymat;
+                            //       change();
+                            //     });
+                            //   },
+                            //   items:
+                            //       viloyatlar.map<DropdownMenuItem<String>>((
+                            //         String viloyat,
+                            //       ) {
+                            //         return DropdownMenuItem<String>(
+                            //           value: viloyat,
+                            //           child: Text(
+                            //             viloyat,
+                            //
+                            //             style: TextStyle(
+                            //               fontSize: 19,
+                            //               fontWeight: FontWeight.w800,
+                            //               color: Colors.black,
+                            //             ),
+                            //           ),
+                            //         );
+                            //       }).toList(),
+                            // ),
+                            //
+                            ,
                             Text(
                               "${getMonth(DateTime.now().month).toUpperCase()} ${DateTime.now().day},${DateTime.now().year}",
                               style: TextStyle(

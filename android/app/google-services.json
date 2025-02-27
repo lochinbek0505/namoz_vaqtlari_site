@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "734708283541",
+    "project_id": "namoz-time",
+    "storage_bucket": "namoz-time.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734708283541:android:7d170e30cc01249a4e039c",
+        "android_client_info": {
+          "package_name": "com.example.namoz_vaqtlari"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLw76LRALCLl-o0_p1ddkIJOEQ-A8o22s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
