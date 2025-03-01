@@ -638,7 +638,7 @@ class _HomepageState extends State<Homepage> {
                         prayerName: "Asr",
 
                         time: currentTime.shom.toString(),
-                        icon: Icons.nightlight_round,
+                        icon: Icons.wb_sunny,
                       ),
                       PrayerTimeCard(
                         prayerName: "Shom ('iftorlik')",
