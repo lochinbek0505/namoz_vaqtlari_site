@@ -7,6 +7,7 @@ import 'package:namoz_vaqtlari/models/namoz_time_model.dart';
 import 'package:namoz_vaqtlari/widgets/RamadanTimeCard.dart';
 import 'package:namoz_vaqtlari/widgets/duo_card.dart';
 import 'package:namoz_vaqtlari/widgets/time_card.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -457,6 +458,14 @@ class _HomepageState extends State<Homepage> {
     );
   }
 
+  final String telegramUrl = "https://t.me/ramazon_time_mobile";
+
+  Future<void> _launchURL() async {
+    final Uri url = Uri.parse(telegramUrl);
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      throw "URL-ni ochib bo‘lmadi: $telegramUrl";
+    }
+  }
 
 
   @override
@@ -594,6 +603,47 @@ class _HomepageState extends State<Homepage> {
                             RamadanTimeCard(time: model.timesList![index]),
                       ),
                     ),
+                // https://t.me/ramazon_time_mobile
+                SizedBox(height: 30,),
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "🕌 Ramazon Taqvimi Ilovasi\n\n",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(text: "📥 Yuklab olish: "),
+                      WidgetSpan(
+                        child: GestureDetector(
+                          onTap: _launchURL,
+                          child: Text(
+                            "Ramazon Taqvimi Ilovasi",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 15,),
+                Center(
+                  child: Text(
+                    textAlign: TextAlign.center,
+                    "©️ https://namozvaqti.uz/ site ma'lumotlaridan foydalanildi",
+                    style: TextStyle(color: Colors.black, fontSize: 16),),
+                )
               ],
             ),
           ),
