@@ -8,7 +8,7 @@ import 'package:namoz_vaqtlari/widgets/RamadanTimeCard.dart';
 import 'package:namoz_vaqtlari/widgets/duo_card.dart';
 import 'package:namoz_vaqtlari/widgets/time_card.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'dart:js' as js;
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -461,10 +461,8 @@ class _HomepageState extends State<Homepage> {
   final String telegramUrl = "https://t.me/ramazon_time_mobile";
 
   Future<void> _launchURL() async {
-    final Uri url = Uri.parse(telegramUrl);
-    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
-      throw "URL-ni ochib bo‘lmadi: $telegramUrl";
-    }
+    js.context.callMethod('open', [telegramUrl]);
+
   }
 
 
@@ -643,7 +641,8 @@ class _HomepageState extends State<Homepage> {
                     textAlign: TextAlign.center,
                     "©️ https://namozvaqti.uz/ site ma'lumotlaridan foydalanildi",
                     style: TextStyle(color: Colors.black, fontSize: 16),),
-                )
+                ),
+                SizedBox(height: 10,),
               ],
             ),
           ),
